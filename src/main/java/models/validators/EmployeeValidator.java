@@ -82,7 +82,7 @@ public class EmployeeValidator {
      */
     private static long isDuplicateEmployee(EmployeeService service, String code) {
 
-        long employeesCount = service.cuntByCode(code);
+        long employeesCount = service.countByCode(code);
         return employeesCount;
     }
 
