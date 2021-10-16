@@ -60,6 +60,7 @@ public class EmployeeService extends ServiceBase{
                     .setParameter(JpaConst.JPQL_PARM_CODE, code)
                     .setParameter(JpaConst.JPQL_PARM_PASSWORD, pass)
                     .getSingleResult();
+            System.out.println(e.getCode() + "さんのadmin_flagは" + e.getAdminFlag());
         } catch (NoResultException ex) {
         }
 

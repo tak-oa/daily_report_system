@@ -79,6 +79,8 @@ public void login() throws ServletException, IOException {
             EmployeeView ev = service.findOne(code, plainPass, pepper);
             // セッションにログインした従業員を設定
             putSessionScope(AttributeConst.LOGIN_EMP, ev);
+            System.out.println("AuthActionのloginメソッドの中です");
+            System.out.println(ev.getCode() + "さんのadmin_flagは" + ev.getAdminFlag());
             // セッションにログイン完了のフラッシュメッセージを設定
             putSessionScope(AttributeConst.FLUSH, MessageConst.I_LOGINED.getMessage());
             // トップページへリダイレクト
