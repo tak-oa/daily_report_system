@@ -198,7 +198,7 @@ public class EmployeeService extends ServiceBase{
      * @param pepper pepper文字列
      * @return 認証結果を返却（true or false）
      */
-    private Boolean validateLogin(String code, String plainPass, String pepper) {
+    public Boolean validateLogin(String code, String plainPass, String pepper) {
 
         boolean isValidEmployee = false;
         if (code != null && !code.equals("") && plainPass != null && !plainPass.equals("")) {
