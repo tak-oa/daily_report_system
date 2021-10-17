@@ -41,10 +41,10 @@ import lombok.Setter;
             query = JpaConst.Q_REP_COUNT_ALL_MINE_DEF)
 })
 
-@Getter // 全てのクラスフィールドについてgetterを自動生成(Lombok)
-@Setter //
-@NoArgsConstructor  // 引数なしコンストラクタを自動生成(Lombok)
-@AllArgsConstructor // 全てのクラスフィールドを引数にもつ引数ありコンストラクタを自動生成(Lombok)
+@Getter //全てのクラスフィールドについてgetterを自動生成する(Lombok)
+@Setter //全てのクラスフィールドについてsetterを自動生成する(Lombok)
+@NoArgsConstructor //引数なしコンストラクタを自動生成する(Lombok)
+@AllArgsConstructor //全てのクラスフィールドを引数にもつ引数ありコンストラクタを自動生成する(Lombok)
 @Entity
 public class Report {
 
@@ -93,4 +93,5 @@ public class Report {
      */
     @Column(name = JpaConst.REP_COL_UPDATED_AT, nullable = false)
     private LocalDateTime updatedAt;
+
 }

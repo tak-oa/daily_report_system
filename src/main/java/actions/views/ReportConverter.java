@@ -12,7 +12,7 @@ import models.Report;
 public class ReportConverter {
 
     /**
-     * ViewモデルのインスタンスからDTOモデルのインスタンスを作成
+     * ViewモデルのインスタンスからDTOモデルのインスタンスを作成する
      * @param rv ReportViewのインスタンス
      * @return Reportのインスタンス
      */
@@ -28,7 +28,7 @@ public class ReportConverter {
     }
 
     /**
-     * DTOモデルのインスタンスからViewモデルのインスタンスを作成
+     * DTOモデルのインスタンスからViewモデルのインスタンスを作成する
      * @param r Reportのインスタンス
      * @return ReportViewのインスタンス
      */
@@ -49,7 +49,7 @@ public class ReportConverter {
     }
 
     /**
-     * DTOモデルのリストからviewモデルのリストを作成
+     * DTOモデルのリストからViewモデルのリストを作成する
      * @param list DTOモデルのリスト
      * @return Viewモデルのリスト
      */
@@ -64,9 +64,9 @@ public class ReportConverter {
     }
 
     /**
-     * Viewモデルの全フィールド内容をDTOモデルのフィールドにコピー
+     * Viewモデルの全フィールドの内容をDTOモデルのフィールドにコピーする
      * @param r DTOモデル(コピー先)
-     * @return rv Viewモデル(コピー先)
+     * @param rv Viewモデル(コピー元)
      */
     public static void copyViewToModel(Report r, ReportView rv) {
         r.setId(rv.getId());
@@ -76,10 +76,11 @@ public class ReportConverter {
         r.setContent(rv.getContent());
         r.setCreatedAt(rv.getCreatedAt());
         r.setUpdatedAt(rv.getUpdatedAt());
+
     }
 
     /**
-     * DTOモデルの全フィールドの内容をViewモデルのフィールドにコピー
+     * DTOモデルの全フィールドの内容をViewモデルのフィールドにコピーする
      * @param r DTOモデル(コピー元)
      * @param rv Viewモデル(コピー先)
      */
@@ -91,4 +92,5 @@ public class ReportConverter {
         rv.setCreatedAt(r.getCreatedAt());
         rv.setUpdatedAt(r.getUpdatedAt());
     }
+
 }

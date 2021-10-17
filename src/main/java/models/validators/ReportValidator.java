@@ -19,13 +19,13 @@ public class ReportValidator {
     public static List<String> validate(ReportView rv) {
         List<String> errors = new ArrayList<String>();
 
-        // タイトルのチェック
+        //タイトルのチェック
         String titleError = validateTitle(rv.getTitle());
         if (!titleError.equals("")) {
             errors.add(titleError);
         }
 
-        // 内容のチェック
+        //内容のチェック
         String contentError = validateContent(rv.getContent());
         if (!contentError.equals("")) {
             errors.add(contentError);
@@ -35,7 +35,7 @@ public class ReportValidator {
     }
 
     /**
-     * タイトルに入力値があるかチェックし、なければエラーメッセージを返す
+     * タイトルに入力値があるかをチェックし、入力値がなければエラーメッセージを返却
      * @param title タイトル
      * @return エラーメッセージ
      */
@@ -44,12 +44,12 @@ public class ReportValidator {
             return MessageConst.E_NOTITLE.getMessage();
         }
 
-        // 入力値がある場合は空文字を返却
+        //入力値がある場合は空文字を返却
         return "";
     }
 
     /**
-     * 内容に入力値があるかをチェック、なければエラーメッセージを返す
+     * 内容に入力値があるかをチェックし、入力値がなければエラーメッセージを返却
      * @param content 内容
      * @return エラーメッセージ
      */
@@ -58,7 +58,7 @@ public class ReportValidator {
             return MessageConst.E_NOCONTENT.getMessage();
         }
 
-        // 入力値がある場合は空文字を返却
+        //入力値がある場合は空文字を返却
         return "";
     }
 }

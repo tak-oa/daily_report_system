@@ -64,7 +64,7 @@ public interface JpaConst {
     String Q_EMP_COUNT_RESISTERED_BY_CODE_DEF = "SELECT COUNT(e) FROM Employee AS e WHERE e.code = :" + JPQL_PARM_CODE;
     // 全ての日報をidの降順に取得
     String Q_REP_GET_ALL = ENTITY_REP + ".getALL";
-    String Q_REP_GET_ALL_DEF = "SELECT COUNT(r) FROM Report AS r";
+    String Q_REP_GET_ALL_DEF = "SELECT r FROM Report AS r ORDER BY r.id DESC";
     //全ての日報の件数を取得する
     String Q_REP_COUNT = ENTITY_REP + ".count";
     String Q_REP_COUNT_DEF = "SELECT COUNT(r) FROM Report AS r";
