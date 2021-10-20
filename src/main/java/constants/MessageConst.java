@@ -22,7 +22,13 @@ public enum MessageConst {
     E_NOEMP_CODE("社員番号を入力してください"),
     E_EMP_CODE_EXIST("入力された社員番号情報は既に存在しています。"),
     E_NOTITLE("タイトルを入力してください"),
-    E_NOCONTENT("内容を入力してください");
+    E_NOCONTENT("内容を入力してください"),
+
+    // 顧客情報のバリデーション
+    C_NOCOMPANY("会社名を入力してください"),
+    C_NONAME("氏名を入力してください"),
+    C_NOMAIL("メールアドレスを入力してください"),
+    C_NOTEL("電話番号を入力してください");
 
     /**
      * 文字列

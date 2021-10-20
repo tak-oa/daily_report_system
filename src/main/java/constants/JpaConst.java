@@ -47,7 +47,7 @@ public interface JpaConst {
     String CLI_COL_COM = "company"; // 会社名
     String CLI_COL_NAME = "name";   // 名前
     String CLI_COL_MAIL = "mail";   // メールアドレス
-    String CLI_COL_NUM = "number";  // 電話番号
+    String CLI_COL_TEL = "telephone";  // 電話番号
 
     // Entity名
     String ENTITY_EMP = "employee"; // 従業員
@@ -87,5 +87,4 @@ public interface JpaConst {
     // 全ての顧客をid順に取得
     String Q_CLI_GET_ALL = ENTITY_CLI + ".count";   // name
     String Q_CLI_GET_ALL_DEF ="SELECT e FROM Client AS e ORDER BY e.id DESC";   // query
-    // していし
 }

@@ -27,7 +27,7 @@ public enum AttributeConst {
     // 従業員管理
     EMPLOYEE("employee"),
     EMPLOYEES("employees"),
-    EMP_COUNT("employee_count"),
+    EMP_COUNT("employees_count"),
     EMP_ID("id"),
     EMP_CODE("code"),
     EMP_PASS("pasword"),
@@ -49,7 +49,15 @@ public enum AttributeConst {
     REP_ID("id"),
     REP_DATE("report_date"),
     REP_TITLE("title"),
-    REP_CONTENT("content");
+    REP_CONTENT("content"),
+
+    // 顧客情報
+    CLIENT("client"),
+    CLIENTS("clients"),
+    CLI_COUNT("clients_count"),
+    CLI_ID("id"),
+    CLI_COMPANY("clients_company"),
+    CLI_NAME("clients_name");
 
     private final String text;
     private final Integer i;

@@ -47,7 +47,7 @@ public class Client {
     /**
      * 名前
      */
-    @Column(name = JpaConst.CLI_COL_NAME, nullable = false, unique = true)
+    @Column(name = JpaConst.CLI_COL_NAME, nullable = false)
     private String name;
 
     /**
@@ -59,6 +59,6 @@ public class Client {
     /**
      * 電話番号
      */
-    @Column(name = JpaConst.CLI_COL_NUM, nullable = false)
-    private String number;
+    @Column(name = JpaConst.CLI_COL_TEL, nullable = false)
+    private String telephone;
 }
