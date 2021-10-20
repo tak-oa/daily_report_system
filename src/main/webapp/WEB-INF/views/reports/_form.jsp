@@ -48,8 +48,8 @@
         <option value="completed">完了</option>
         <option value="discontinued">中止</option>
     </select>
-    <button type="submit">送信</button>
 </form>
+<br /><br />
 
 <input type="hidden" name="${AttributeConst.REP_ID.getValue()}" value="${report.id}" />
 <input type="hidden" name="${AttributeConst.TOKEN.getValue()}" value="${_token}" />
