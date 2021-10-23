@@ -29,11 +29,11 @@
 <textarea name="${AttributeConst.REP_CONTENT.getValue()}" rows="10" cols="50">${report.content}</textarea>
 <br /><br />
 
-<label for="${AttributeConst.CLI_COMPANY.getValue()}"会社名</label><br />
+<label for="${AttributeConst.CLI_COMPANY.getValue()}">取引先企業</label><br />
 <input type="text" name="${AttributeConst.CLI_COMPANY.getValue()}" value="${client.company}" />
 <br /><br />
 
-<label for="${AttributeConst.CLI_NAME.getValue()}"顧客名</label><br />
+<label for="${AttributeConst.CLI_NAME.getValue()}">担当者名</label><br />
 <input type="text" name="${AttributeConst.CLI_NAME.getValue()}" value="${client_name}" />
 <br /><br />
 
