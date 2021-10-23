@@ -39,13 +39,10 @@ public interface JpaConst {
     String REP_COL_CONTENT = "content"; // 日報の内容
     String REP_COL_CREATED_AT = "created_at";   // 登録日時
     String REP_COL_UPDATED_AT = "updated_at";   // 更新日時
-
-    // 顧客情報テーブル
-    String TABLE_CLI = "clients";   // テーブル名
     // 顧客情報テーブルカラム
     String CLI_COL_ID = "id";   // id
     String CLI_COL_COM = "company"; // 会社名
-    String CLI_COL_NAME = "name";   // 名前
+    String CLI_COL_CLIENT = "client";   // 名前
     String CLI_COL_MAIL = "mail";   // メールアドレス
     String CLI_COL_TEL = "telephone";  // 電話番号
 
@@ -84,7 +81,5 @@ public interface JpaConst {
     // 指定した従業員が作成した日報の件数を取得
     String Q_REP_COUNT_ALL_MINE = ENTITY_REP + ".countAllMine";
     String Q_REP_COUNT_ALL_MINE_DEF = "SELECT COUNT(r) FROM Report AS r WHERE r.employee = :" + JPQL_PARM_EMPLOYEE;
-    // 全ての顧客をid順に取得
-    String Q_CLI_GET_ALL = ENTITY_CLI + ".count";   // name
-    String Q_CLI_GET_ALL_DEF ="SELECT e FROM Client AS e ORDER BY e.id DESC";   // query
+
 }

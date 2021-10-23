@@ -26,9 +26,9 @@ public enum MessageConst {
 
     // 顧客情報のバリデーション
     C_NOCOMPANY("会社名を入力してください"),
-    C_NONAME("氏名を入力してください"),
+    C_NOCLIENT("氏名を入力してください"),
     C_NOMAIL("メールアドレスを入力してください"),
-    C_NOTEL("電話番号を入力してください");
+    C_NOTELEPHONE("電話番号を入力してください");
 
     /**
      * 文字列

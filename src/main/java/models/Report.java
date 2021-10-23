@@ -83,6 +83,30 @@ public class Report {
     private String content;
 
     /**
+     * 取引先企業
+     */
+    @Column(name = JpaConst.CLI_COL_COM, nullable = false)
+    private String company;
+
+    /**
+     * 担当者
+     */
+    @Column(name = JpaConst.CLI_COL_CLIENT, nullable = false)
+    private String client;
+
+    /**
+     * メールアドレス
+     */
+    @Column(name = JpaConst.CLI_COL_MAIL, nullable = false)
+    private String mail;
+
+    /**
+     * 電話番号
+     */
+    @Column(name = JpaConst.CLI_COL_TEL, nullable = false)
+    private String telephone;
+
+    /**
      * 登録日時
      */
     @Column(name = JpaConst.REP_COL_CREATED_AT, nullable = false)

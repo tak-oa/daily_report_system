@@ -52,12 +52,10 @@ public enum AttributeConst {
     REP_CONTENT("content"),
 
     // 顧客情報
-    CLIENT("client"),
-    CLIENTS("clients"),
-    CLI_COUNT("clients_count"),
-    CLI_ID("id"),
-    CLI_COMPANY("clients_company"),
-    CLI_NAME("clients_name");
+    REP_COMPANY("company"),
+    REP_CLIENT("client"),
+    REP_MAIL("mail"),
+    REP_TELEPHONE("telephone");
 
     private final String text;
     private final Integer i;
