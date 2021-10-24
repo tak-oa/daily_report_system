@@ -83,37 +83,6 @@ public class Report {
     private String content;
 
     /**
-     * 取引先企業
-     */
-    @Column(name = JpaConst.REP_COL_COMPANY, nullable = false)
-    private String company;
-
-    /**
-     * 担当者
-     */
-    @Column(name = JpaConst.REP_COL_CLIENT, nullable = false)
-    private String client;
-
-    /**
-     * メールアドレス
-     */
-    @Column(name = JpaConst.REP_COL_MAIL, nullable = false, unique = true)
-    private String mail;
-
-    /**
-     * 電話番号
-     */
-    @Column(name = JpaConst.REP_COL_TEL, nullable = false, unique = true)
-    private String telephone;
-
-    /**
-     * 商談状況
-     */
-    @Lob
-    @Column(name = JpaConst.REP_COL_STATUS, nullable = false)
-    private String status;
-
-    /**
      * 登録日時
      */
     @Column(name = JpaConst.REP_COL_CREATED_AT, nullable = false)

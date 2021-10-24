@@ -44,31 +44,6 @@ public class ReportView {
     private String content;
 
     /**
-     * 取引先企業
-     */
-    private String company;
-
-    /**
-     * 担当者
-     */
-    private String client;
-
-    /**
-     * メールアドレス
-     */
-    private String mail;
-
-    /**
-     * 商談状況
-     */
-    private String status;
-
-    /**
-     * 電話番号
-     */
-    private String telephone;
-
-    /**
      * 登録日時
      */
     private LocalDateTime createdAt;

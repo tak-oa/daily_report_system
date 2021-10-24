@@ -23,11 +23,6 @@ public class ReportConverter {
                 rv.getReportDate(),
                 rv.getTitle(),
                 rv.getContent(),
-                rv.getCompany(),
-                rv.getClient(),
-                rv.getMail(),
-                rv.getTelephone(),
-                rv.getStatus(),
                 rv.getCreatedAt(),
                 rv.getUpdatedAt());
     }
@@ -49,11 +44,6 @@ public class ReportConverter {
                 r.getReportDate(),
                 r.getTitle(),
                 r.getContent(),
-                r.getCompany(),
-                r.getClient(),
-                r.getMail(),
-                r.getTelephone(),
-                r.getStatus(),
                 r.getCreatedAt(),
                 r.getUpdatedAt());
     }
@@ -84,11 +74,6 @@ public class ReportConverter {
         r.setReportDate(rv.getReportDate());
         r.setTitle(rv.getTitle());
         r.setContent(rv.getContent());
-        r.setCompany(rv.getCompany());
-        r.setClient(rv.getClient());
-        r.setMail(rv.getMail());
-        r.setTelephone(rv.getTelephone());
-        r.setStatus(rv.getStatus());
         r.setCreatedAt(rv.getCreatedAt());
         r.setUpdatedAt(rv.getUpdatedAt());
 

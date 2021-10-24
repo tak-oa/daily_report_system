@@ -28,26 +28,6 @@
                     <td><pre><c:out value="${report.content}" /></pre></td>
                 </tr>
                 <tr>
-                    <th>取引先企業</th>
-                    <td><c:out value="${report.company}" /></td>
-                </tr>
-                <tr>
-                    <th>取引先相手</th>
-                    <td><c:out value="${report.client}" /></td>
-                </tr>
-                <tr>
-                    <th>メールアドレス</th>
-                    <td><c:out value="${report.mail}" /></td>
-                </tr>
-                <tr>
-                    <th>電話番号</th>
-                    <td><c:out value="${report.telephone}" /></td>
-                </tr>
-                <tr>
-                    <th>商談状況</th>
-                    <td><pre><c:out value="${report.status}" /></pre></td>
-                </tr>
-                <tr>
                     <th>登録日時</th>
                     <fmt:parseDate value="${report.createdAt}" pattern="yyyy-MM-dd'T'HH:mm:ss" var="createDay" type="date" />
                     <td><fmt:formatDate value="${createDay}" pattern="yyyy-MM-dd HH:mm:ss" /></td>

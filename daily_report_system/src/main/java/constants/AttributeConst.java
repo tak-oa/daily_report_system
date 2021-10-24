@@ -49,16 +49,7 @@ public enum AttributeConst {
     REP_ID("id"),
     REP_DATE("report_date"),
     REP_TITLE("title"),
-    REP_CONTENT("content"),
-
-    // 顧客情報
-    REP_COMPANY("company"),
-    REP_CLIENT("client"),
-    REP_MAIL("mail"),
-    REP_TELEPHONE("telephone"),
-
-    // 商談状況
-    REP_STATUS("status");
+    REP_CONTENT("content");
 
     private final String text;
     private final Integer i;

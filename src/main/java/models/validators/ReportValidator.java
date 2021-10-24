@@ -120,12 +120,12 @@ public class ReportValidator {
       * @return エラーメッセージ
       */
       private static String validateMail(String mail) {
-         if (mail == null || mail.equals("")) {
+          if (mail == null || mail.equals("")) {
              return MessageConst.C_NOMAIL.getMessage();
-         }
+          }
 
-         // 入力値がある場合は空文字を返却
-         return "";
+          // 入力値がある場合は空文字を返却
+          return "";
      }
 
      /**

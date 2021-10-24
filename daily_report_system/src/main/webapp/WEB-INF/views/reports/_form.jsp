@@ -28,27 +28,6 @@
 <label for="${AttributeConst.REP_CONTENT.getValue()}">内容</label><br />
 <textarea name="${AttributeConst.REP_CONTENT.getValue()}" rows="10" cols="50">${report.content}</textarea>
 <br /><br />
-
-<label for="${AttributeConst.REP_COMPANY.getValue()}">取引先企業</label><br />
-<input type="text" name="${AttributeConst.REP_COMPANY.getValue()}" value="${report.company}" />
-<br /><br />
-
-<label for="${AttributeConst.REP_CLIENT.getValue()}">取引先相手</label><br />
-<input type="text" name="${AttributeConst.REP_CLIENT.getValue()}" value="${report.client}" />
-<br /><br />
-
-<label for="${AttributeConst.REP_MAIL.getValue()}">メールアドレス</label><br />
-<input type="text" name="${AttributeConst.REP_MAIL.getValue()}" value="${report.mail}" />
-<br /><br />
-
-<label for="${AttributeConst.REP_TELEPHONE.getValue()}">電話番号</label><br />
-<input type="text" name="${AttributeConst.REP_TELEPHONE.getValue()}" value="${report.telephone}" />
-<br /><br />
-
-<label for="${AttributeConst.REP_STATUS.getValue()}">商談状況</label><br />
-<textarea name="${AttributeConst.REP_STATUS.getValue()}" rows="10" cols="50">${report.status}</textarea>
-<br /><br />
-
 <input type="hidden" name="${AttributeConst.REP_ID.getValue()}" value="${report.id}" />
 <input type="hidden" name="${AttributeConst.TOKEN.getValue()}" value="${_token}" />
 <button type="submit">投稿</button>
