@@ -97,13 +97,13 @@ public class Report {
     /**
      * メールアドレス
      */
-    @Column(name = JpaConst.REP_COL_MAIL, nullable = false, unique = true)
+    @Column(name = JpaConst.REP_COL_MAIL, nullable = false)
     private String mail;
 
     /**
      * 電話番号
      */
-    @Column(name = JpaConst.REP_COL_TEL, nullable = false, unique = true)
+    @Column(name = JpaConst.REP_COL_TEL, nullable = false)
     private String telephone;
 
     /**
