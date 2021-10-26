@@ -59,14 +59,16 @@ public class ReportView {
     private String mail;
 
     /**
+     * 電話番号
+     */
+    private String telephone;
+
+    /**
      * 商談状況
      */
     private String status;
 
-    /**
-     * 電話番号
-     */
-    private String telephone;
+
 
     /**
      * 登録日時
