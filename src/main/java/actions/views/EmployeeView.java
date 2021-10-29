@@ -38,9 +38,9 @@ public class EmployeeView {
     private String password;
 
     /**
-     * 管理者権限があるかどうか
+     * 権限があるかどうか
      */
-    private Integer adminFlag;
+    private Integer ApprovalFlag;
 
     /**
      * 登録日時

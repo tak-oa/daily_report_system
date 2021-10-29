@@ -19,15 +19,19 @@ public interface JpaConst {
     String EMP_COL_CODE = "code";   // 社員番号
     String EMP_COL_NAME = "name";   // 氏名
     String EMP_COL_PASS = "password";   // パスワード
-    String EMP_COL_ADMIN_FLAG = "admin_flag";   // 管理者権限
+    String EMP_COL_APPROVAL_FLAG = "approval_flag";   // 管理者権限
     String EMP_COL_CREATED_AT = "created_at";   // 登録日時
     String EMP_COL_UPDATED_AT = "updated_at";   // 更新日時
     String EMP_COL_DELETE_FLAG = "delete_flag"; // 削除フラグ
 
+    int ROLE_DIRECTOR = 3;  // 承認権限オン(部長)
+    int ROLE_MANAGER = 2;   // 承認権限オン(課長)
     int ROLE_ADMIN = 1; // 管理者権限オン(管理者)
-    int ROLE_GENERAL = 0;   // 管理者権限オフ(一般)
+    int ROLE_GENERAL = 0;   // 一般
     int EMP_DEL_TRUE = 1;   // 削除フラグオン(削除済み)
     int EMP_DEL_FALSE = 0;  // 削除フラグオフ(現役)
+    int APP_FLAG_TRUE = 1;  // 承認フラグオン(承認済み)
+    int APP_FLAG_FALSE = 0; // 承認フラグオフ(未承認)
 
     // 日報テーブル
     String TABLE_REP = "reports";   // テーブル名

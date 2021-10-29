@@ -68,8 +68,6 @@ public class ReportView {
      */
     private String status;
 
-
-
     /**
      * 登録日時
      */
@@ -79,4 +77,9 @@ public class ReportView {
      * 更新日時
      */
     private LocalDateTime updatedAt;
+
+    /**
+     * 上長（課長・部長）より承認されたかどうか
+     */
+    private Integer Approval;
 }

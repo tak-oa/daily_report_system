@@ -35,12 +35,18 @@ public enum AttributeConst {
     EMP_ADMIN_FLG("admin_flag"),
 
     // 管理者フラグ
+    ROLE_DIRECTOR(3),
+    ROLE_MANAGER(2),
     ROLE_ADMIN(1),
     ROLE_GENERAL(0),
 
     // 削除フラグ
     DEL_FLAG_TRUE(1),
     DEL_FLAG_FALSE(0),
+
+    // 承認フラグ
+    APP_FLAG_TRUE(1),
+    APP_FLAG_FALSE(0),
 
     // 日報管理
     REPORT("report"),

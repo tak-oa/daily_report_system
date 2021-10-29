@@ -264,24 +264,27 @@ public class EmployeeAction extends ActionBase {
     }
 
     /**
-     * ログイン中の従業員が管理者かどうかチェックし、管理者でなければエラー画面を表示
-     * true: 管理者 false: 管理者ではない
+     * ログイン中の従業員の権限をチェックし、閲覧権限がなければエラー画面を表示
+     * 0:一般 1:管理者 2:課長 3:部長
      * @throws ServletException
      * @throws IOException
      */
-    private boolean checkAdmin() throws ServletException, IOException {
+    private boolean checkApproval() throws ServletException, IOException {
 
         //セッションからログイン中の従業員情報を取得
         EmployeeView ev = (EmployeeView) getSessionScope(AttributeConst.LOGIN_EMP);
 
-        //管理者でなければエラー画面を表示
-        if (ev.getAdminFlag() != AttributeConst.ROLE_ADMIN.getIntegerValue()) {
-
+        //閲覧権限がなければエラー画面を表示
+        if (ev.getApprovalFlag() != AttributeConst.ROLE_ADMIN.getIntegerValue()) {
             forward(ForwardConst.FW_ERR_UNKNOWN);
             return false;
-
+        } else if (ev.getApprovalFlag() != AttributeConst.ROLE_MANAGER.getIntegerValue()) {
+            forward(ForwardConst.FW_ERR_UNKNOWN);
+            return false;
+        } else if (ev.getApprovalFlag() != AttributeConst.ROLE_DIRECTOR.getIntegerValue()) {
+            forward(ForwardConst.FW_ERR_UNKNOWN);
+            return false;
         } else {
-
             return true;
         }
 
