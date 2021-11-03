@@ -19,15 +19,16 @@ public interface JpaConst {
     String EMP_COL_CODE = "code";   // 社員番号
     String EMP_COL_NAME = "name";   // 氏名
     String EMP_COL_PASS = "password";   // パスワード
-    String EMP_COL_APPROVAL_FLAG = "approval_flag";   // 管理者権限
+    String EMP_COL_ADMIN_FLG = "admin_flag";    // 管理者権限
+    String EMP_COL_APPROVAL_FLG = "approval_flag";   // 承認者権限
     String EMP_COL_CREATED_AT = "created_at";   // 登録日時
     String EMP_COL_UPDATED_AT = "updated_at";   // 更新日時
-    String EMP_COL_DELETE_FLAG = "delete_flag"; // 削除フラグ
-
+    String EMP_COL_DELETE_FLG = "delete_flag"; // 削除フラグ
     int ROLE_DIRECTOR = 3;  // 承認権限オン(部長)
     int ROLE_MANAGER = 2;   // 承認権限オン(課長)
+    int ROLE_GENERALS = 0;  // 承認権限オフ（一般）
     int ROLE_ADMIN = 1; // 管理者権限オン(管理者)
-    int ROLE_GENERAL = 0;   // 一般
+    int ROLE_GENERAL = 0;   // 管理者権限オフ（一般）
     int EMP_DEL_TRUE = 1;   // 削除フラグオン(削除済み)
     int EMP_DEL_FALSE = 0;  // 削除フラグオフ(現役)
     int APP_FLAG_TRUE = 1;  // 承認フラグオン(承認済み)
@@ -48,6 +49,7 @@ public interface JpaConst {
     String REP_COL_MAIL = "mail";   // メールアドレス
     String REP_COL_TEL = "telephone";  // 電話番号
     String REP_COL_STATUS = "status";    // 商談状況
+    String REP_COL_APPROVAL_FLG = "approvals_flag";   // 承認されているかどうか
     // Entity名
     String ENTITY_EMP = "employee"; // 従業員
     String ENTITY_REP = "report";   // 日報
@@ -83,5 +85,9 @@ public interface JpaConst {
     // 指定した従業員が作成した日報の件数を取得
     String Q_REP_COUNT_ALL_MINE = ENTITY_REP + ".countAllMine";
     String Q_REP_COUNT_ALL_MINE_DEF = "SELECT COUNT(r) FROM Report AS r WHERE r.employee = :" + JPQL_PARM_EMPLOYEE;
+    // 承認されていない日報を取得
+    String Q_REP_GET_BY_APPROVAL_FLG = ENTITY_REP + "getByApprovalFlag";
+    String Q_REP_GET_BY_APPROVAL_FLG_DEF = "SELECT r FROM Employee AS r WHERE r.approvals_flag = 0";
+    // 承認されている日報を取得
 
 }

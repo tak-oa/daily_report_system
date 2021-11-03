@@ -25,15 +25,18 @@ public class EmployeeConverter {
                 ev.getCode(),
                 ev.getName(),
                 ev.getPassword(),
+                ev.getAdminFlag() == null
+                        ? null
+                        : ev.getAdminFlag() == AttributeConst.ROLE_ADMIN.getIntegerValue()
+                            ? JpaConst.ROLE_ADMIN
+                            : JpaConst.ROLE_GENERAL,
                 ev.getApprovalFlag() == null
                         ? null
                         : ev.getApprovalFlag() == AttributeConst.ROLE_DIRECTOR.getIntegerValue()
-                                ? JpaConst.ROLE_DIRECTOR
-                                : ev.getApprovalFlag() == AttributeConst.ROLE_MANAGER.getIntegerValue()
-                                    ? JpaConst.ROLE_MANAGER
-                                    : ev.getApprovalFlag() == AttributeConst.ROLE_ADMIN.getIntegerValue()
-                                        ? JpaConst.ROLE_ADMIN
-                                        : JpaConst.ROLE_GENERAL,
+                            ? JpaConst.ROLE_DIRECTOR
+                            : ev.getApprovalFlag() == AttributeConst.ROLE_MANAGER.getIntegerValue()
+                                ? JpaConst.ROLE_MANAGER
+                                : JpaConst.ROLE_GENERALS,
                 ev.getCreatedAt(),
                 ev.getUpdatedAt(),
                 ev.getDeleteFlag() == null
@@ -59,15 +62,18 @@ public class EmployeeConverter {
                 e.getCode(),
                 e.getName(),
                 e.getPassword(),
+                e.getAdminFlag() == null
+                        ? null
+                        : e.getAdminFlag() == AttributeConst.ROLE_ADMIN.getIntegerValue()
+                            ? JpaConst.ROLE_ADMIN
+                            : JpaConst.ROLE_GENERAL,
                 e.getApprovalFlag() == null
                         ? null
                         : e.getApprovalFlag() == AttributeConst.ROLE_DIRECTOR.getIntegerValue()
                             ? JpaConst.ROLE_DIRECTOR
                             : e.getApprovalFlag() == AttributeConst.ROLE_MANAGER.getIntegerValue()
                                 ? JpaConst.ROLE_MANAGER
-                                : e.getApprovalFlag() == AttributeConst.ROLE_ADMIN.getIntegerValue()
-                                    ? JpaConst.ROLE_ADMIN
-                                    : JpaConst.ROLE_GENERAL,
+                                : JpaConst.ROLE_GENERALS,
                 e.getCreatedAt(),
                 e.getUpdatedAt(),
                 e.getDeleteFlag() == null
@@ -102,6 +108,7 @@ public class EmployeeConverter {
         e.setCode(ev.getCode());
         e.setName(ev.getName());
         e.setPassword(ev.getPassword());
+        e.setAdminFlag(ev.getAdminFlag());
         e.setApprovalFlag(ev.getApprovalFlag());
         e.setCreatedAt(ev.getCreatedAt());
         e.setUpdatedAt(ev.getUpdatedAt());

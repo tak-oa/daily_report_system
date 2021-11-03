@@ -71,9 +71,15 @@ public class Employee {
     private String password;
 
     /**
-     * 承認・管理者権限があるかどうか（一般:0, 管理者:1, 課長:2, 部長3）
+     * 管理者権限があるかどうか（一般:0, 管理者:1）
      */
-    @Column(name = JpaConst.EMP_COL_APPROVAL_FLAG, nullable = false)
+    @Column(name = JpaConst.EMP_COL_ADMIN_FLG, nullable = false)
+    private Integer adminFlag;
+
+    /**
+     * 承認者権限があるかどうか（一般:0, 課長:1, 部長:2）
+     */
+    @Column(name = JpaConst.EMP_COL_APPROVAL_FLG, nullable = false)
     private Integer approvalFlag;
 
     /**
@@ -91,6 +97,6 @@ public class Employee {
     /**
      * 削除された従業員かどうか（現役:0, 削除済み:1)
      */
-    @Column(name = JpaConst.EMP_COL_DELETE_FLAG, nullable = false)
+    @Column(name = JpaConst.EMP_COL_DELETE_FLG, nullable = false)
     private Integer deleteFlag;
 }

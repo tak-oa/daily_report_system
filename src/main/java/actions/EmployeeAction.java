@@ -42,7 +42,7 @@ public class EmployeeAction extends ActionBase {
      */
     public void index() throws ServletException, IOException {
 
-        //管理者かどうかのチェック //追記
+        //権限があるかどうかのチェック //追記
         if (checkAdmin()) { //追記
 
             //指定されたページ数の一覧画面に表示するデータを取得
@@ -78,7 +78,7 @@ public class EmployeeAction extends ActionBase {
      */
     public void entryNew() throws ServletException, IOException {
 
-        //管理者かどうかのチェック //追記
+        //権限があるかどうかのチェック //追記
         if (checkAdmin()) { //追記
             putRequestScope(AttributeConst.TOKEN, getTokenId()); //CSRF対策用トークン
             putRequestScope(AttributeConst.EMPLOYEE, new EmployeeView()); //空の従業員インスタンス
@@ -105,6 +105,7 @@ public class EmployeeAction extends ActionBase {
                     getRequestParam(AttributeConst.EMP_NAME),
                     getRequestParam(AttributeConst.EMP_PASS),
                     toNumber(getRequestParam(AttributeConst.EMP_ADMIN_FLG)),
+                    toNumber(getRequestParam(AttributeConst.EMP_APPROVAL_FLG)),
                     null,
                     null,
                     AttributeConst.DEL_FLAG_FALSE.getIntegerValue());
@@ -145,7 +146,7 @@ public class EmployeeAction extends ActionBase {
      */
     public void show() throws ServletException, IOException {
 
-        //管理者かどうかのチェック //追記
+        // 権限があるかどうかのチェック //追記
         if (checkAdmin()) { //追記
 
             //idを条件に従業員データを取得する
@@ -173,7 +174,7 @@ public class EmployeeAction extends ActionBase {
      */
     public void edit() throws ServletException, IOException {
 
-        //管理者かどうかのチェック //追記
+        //権限があるかどうかのチェック //追記
         if (checkAdmin()) { //追記
 
             //idを条件に従業員データを取得する
@@ -211,6 +212,7 @@ public class EmployeeAction extends ActionBase {
                     getRequestParam(AttributeConst.EMP_NAME),
                     getRequestParam(AttributeConst.EMP_PASS),
                     toNumber(getRequestParam(AttributeConst.EMP_ADMIN_FLG)),
+                    toNumber(getRequestParam(AttributeConst.EMP_APPROVAL_FLG)),
                     null,
                     null,
                     AttributeConst.DEL_FLAG_FALSE.getIntegerValue());
@@ -264,30 +266,43 @@ public class EmployeeAction extends ActionBase {
     }
 
     /**
-     * ログイン中の従業員の権限をチェックし、閲覧権限がなければエラー画面を表示
-     * 0:一般 1:管理者 2:課長 3:部長
+     * ログイン中の従業員の権限をチェックし、管理者権限がなければエラー画面を表示
+     * 0:一般 1:管理者
      * @throws ServletException
      * @throws IOException
      */
-    private boolean checkApproval() throws ServletException, IOException {
+    private boolean checkAdmin() throws ServletException, IOException {
 
         //セッションからログイン中の従業員情報を取得
         EmployeeView ev = (EmployeeView) getSessionScope(AttributeConst.LOGIN_EMP);
 
-        //閲覧権限がなければエラー画面を表示
-        if (ev.getApprovalFlag() != AttributeConst.ROLE_ADMIN.getIntegerValue()) {
-            forward(ForwardConst.FW_ERR_UNKNOWN);
-            return false;
-        } else if (ev.getApprovalFlag() != AttributeConst.ROLE_MANAGER.getIntegerValue()) {
-            forward(ForwardConst.FW_ERR_UNKNOWN);
-            return false;
-        } else if (ev.getApprovalFlag() != AttributeConst.ROLE_DIRECTOR.getIntegerValue()) {
+        //管理者でなければエラー画面を表示
+        if (ev.getAdminFlag() != AttributeConst.ROLE_ADMIN.getIntegerValue()) {
             forward(ForwardConst.FW_ERR_UNKNOWN);
             return false;
         } else {
             return true;
         }
+    }
 
+    /**
+     * ログイン中の従業員の権限をチェックし、承認者権限がなければエラー画面を表示
+     * 0:一般 1:課長 2:部長
+     * @throws ServletException
+     * @throws IOException
+     */
+    private boolean checkApproval() throws ServletException, IOException {
+
+        // セッションからログイン中の従業員情報を取得
+        EmployeeView ev = (EmployeeView) getSessionScope(AttributeConst.LOGIN_EMP);
+
+        // 承認者でなければエラー画面を表示
+        if (ev.getApprovalFlag() == AttributeConst.ROLE_GENERALS.getIntegerValue()) {
+            forward(ForwardConst.FW_ERR_UNKNOWN);
+            return false;
+        } else {
+            return true;
+        }
     }
 
 }

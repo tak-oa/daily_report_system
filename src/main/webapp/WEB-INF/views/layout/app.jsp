@@ -7,6 +7,7 @@
 <c:set var="actEmp" value="${ForwardConst.ACT_EMP.getValue()}" />
 <c:set var="actRep" value="${ForwardConst.ACT_REP.getValue()}" />
 <c:set var="actAuth" value="${ForwardConst.ACT_AUTH.getValue()}" />
+<c:set var="actApp" value="${ForwardConst.ACT_APP.getValue()}" />
 
 <c:set var="commIdx" value="${ForwardConst.CMD_INDEX.getValue()}" />
 <c:set var="commOut" value="${ForwardConst.CMD_LOGOUT.getValue()}" />
@@ -25,9 +26,16 @@
             <div id="header_menu">
                 <h1><a href="<c:url value='/?action=${actTop}&command=${commIdx}' />">日報管理システム</a></h1>&nbsp;&nbsp;&nbsp;
                 <c:if test="${sessionScope.login_employee != null}">
-                    <c:if test="${sessionScope.login_employee.adminFlag == AttributeConst.ROLE_ADMIN.getIntegerValue()}">
-                        <a href="<c:url value='?action=${actEmp}&command=${commIdx}' />">従業員管理</a>&nbsp;
-                    </c:if>
+                    <c:choose>
+
+                        <c:when test="${sessionScope.login_employee.adminFlag == AttributeConst.ROLE_ADMIN.getIntegerValue()}">
+                            <a href="<c:url value='?action=${actEmp}&command=${commIdx}' />">従業員管理</a>&nbsp;
+                        </c:when>
+                        <c:when test="${sessionScope.login_employee.approvalFlag == AttributeConst.ROLE_MANAGER.getIntegerValue() || sessionScope.login_employee.approvalFlag == AttributeConst.ROLE_DIRECTOR.getIntegerValue()}">
+                            <a href="<c:url value='?action=${actApp}&command=${commIdx}' />">日報未承認管理</a>&nbsp;
+                        </c:when>
+
+                    </c:choose>
                     <a href="<c:url value='?action=${actRep}&command=${commIdx}' />">日報管理</a>&nbsp;
                 </c:if>
             </div>

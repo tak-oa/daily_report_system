@@ -38,9 +38,14 @@ public class EmployeeView {
     private String password;
 
     /**
-     * 権限があるかどうか
+     * 管理者権限があるかどうか（一般:0, 管理者:1）
      */
-    private Integer ApprovalFlag;
+    private Integer adminFlag;
+
+    /**
+     * 承認権限があるかどうか（一般:0, 課長:1, 部長:2）
+     */
+    private Integer approvalFlag;
 
     /**
      * 登録日時

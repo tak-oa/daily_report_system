@@ -33,12 +33,16 @@ public enum AttributeConst {
     EMP_PASS("pasword"),
     EMP_NAME("name"),
     EMP_ADMIN_FLG("admin_flag"),
+    EMP_APPROVAL_FLG("approval_flag"),
 
     // 管理者フラグ
-    ROLE_DIRECTOR(3),
-    ROLE_MANAGER(2),
     ROLE_ADMIN(1),
     ROLE_GENERAL(0),
+
+    // 上長フラグ
+    ROLE_DIRECTOR(2),
+    ROLE_MANAGER(1),
+    ROLE_GENERALS(0),
 
     // 削除フラグ
     DEL_FLAG_TRUE(1),
@@ -56,6 +60,7 @@ public enum AttributeConst {
     REP_DATE("report_date"),
     REP_TITLE("title"),
     REP_CONTENT("content"),
+    REP_APPROVAL("approval"),
 
     // 顧客情報
     REP_COMPANY("company"),

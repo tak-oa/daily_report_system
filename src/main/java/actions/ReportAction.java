@@ -118,6 +118,7 @@ public class ReportAction extends ActionBase {
                     getRequestParam(AttributeConst.REP_TELEPHONE),
                     getRequestParam(AttributeConst.REP_STATUS),
                     null,
+                    null,
                     null);
 
             // 日報情報登録

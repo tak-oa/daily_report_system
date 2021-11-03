@@ -29,7 +29,8 @@ public class ReportConverter {
                 rv.getTelephone(),
                 rv.getStatus(),
                 rv.getCreatedAt(),
-                rv.getUpdatedAt());
+                rv.getUpdatedAt(),
+                rv.getApprovalsFlag());
     }
 
     /**
@@ -55,7 +56,8 @@ public class ReportConverter {
                 r.getTelephone(),
                 r.getStatus(),
                 r.getCreatedAt(),
-                r.getUpdatedAt());
+                r.getUpdatedAt(),
+                r.getApprovalsFlag());
     }
 
     /**
@@ -91,7 +93,7 @@ public class ReportConverter {
         r.setStatus(rv.getStatus());
         r.setCreatedAt(rv.getCreatedAt());
         r.setUpdatedAt(rv.getUpdatedAt());
-
+        r.setApprovalsFlag(rv.getApprovalsFlag());
     }
 
     /**
