@@ -285,24 +285,4 @@ public class EmployeeAction extends ActionBase {
         }
     }
 
-    /**
-     * ログイン中の従業員の権限をチェックし、承認者権限がなければエラー画面を表示
-     * 0:一般 1:課長 2:部長
-     * @throws ServletException
-     * @throws IOException
-     */
-    private boolean checkApproval() throws ServletException, IOException {
-
-        // セッションからログイン中の従業員情報を取得
-        EmployeeView ev = (EmployeeView) getSessionScope(AttributeConst.LOGIN_EMP);
-
-        // 承認者でなければエラー画面を表示
-        if (ev.getApprovalFlag() == AttributeConst.ROLE_GENERALS.getIntegerValue()) {
-            forward(ForwardConst.FW_ERR_UNKNOWN);
-            return false;
-        } else {
-            return true;
-        }
-    }
-
 }

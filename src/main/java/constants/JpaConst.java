@@ -24,8 +24,8 @@ public interface JpaConst {
     String EMP_COL_CREATED_AT = "created_at";   // 登録日時
     String EMP_COL_UPDATED_AT = "updated_at";   // 更新日時
     String EMP_COL_DELETE_FLG = "delete_flag"; // 削除フラグ
-    int ROLE_DIRECTOR = 3;  // 承認権限オン(部長)
-    int ROLE_MANAGER = 2;   // 承認権限オン(課長)
+    int ROLE_DIRECTOR = 2;  // 承認権限オン(部長)
+    int ROLE_MANAGER = 1;   // 承認権限オン(課長)
     int ROLE_GENERALS = 0;  // 承認権限オフ（一般）
     int ROLE_ADMIN = 1; // 管理者権限オン(管理者)
     int ROLE_GENERAL = 0;   // 管理者権限オフ（一般）
