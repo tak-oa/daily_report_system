@@ -204,7 +204,7 @@ public class EmployeeAction extends ActionBase {
     public void update() throws ServletException, IOException {
 
         //CSRF対策 tokenのチェック
-        if (checkAdmin() && checkToken()) { //追記
+        if (checkToken()) { //追記
             //パラメータの値を元に従業員情報のインスタンスを作成する
             EmployeeView ev = new EmployeeView(
                     toNumber(getRequestParam(AttributeConst.EMP_ID)),

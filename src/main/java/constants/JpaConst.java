@@ -87,7 +87,7 @@ public interface JpaConst {
     String Q_REP_COUNT_ALL_MINE_DEF = "SELECT COUNT(r) FROM Report AS r WHERE r.employee = :" + JPQL_PARM_EMPLOYEE;
     // 承認されていない日報を取得
     String Q_REP_GET_BY_APPROVAL_FLG = ENTITY_REP + "getByApprovalFlag";
-    String Q_REP_GET_BY_APPROVAL_FLG_DEF = "SELECT r FROM Employee AS r WHERE r.approvals_flag = 0";
+    String Q_REP_GET_BY_APPROVAL_FLG_DEF = "SELECT r FROM Report AS r WHERE r.approvalsFlag = 0";
     // 承認されている日報を取得
 
 }

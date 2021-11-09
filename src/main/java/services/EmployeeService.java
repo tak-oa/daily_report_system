@@ -154,6 +154,7 @@ public class EmployeeService extends ServiceBase{
 
         savedEmp.setName(ev.getName()); // 変更後の氏名を設定
         savedEmp.setAdminFlag(ev.getAdminFlag()); // 変更後の管理者フラグを設定
+        savedEmp.setApprovalFlag(ev.getApprovalFlag()); // 変更後の承認者フラグを設定
 
         // 更新日時に現在時刻を設定
         LocalDateTime today = LocalDateTime.now();
