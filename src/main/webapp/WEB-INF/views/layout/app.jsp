@@ -7,8 +7,8 @@
 <c:set var="actEmp" value="${ForwardConst.ACT_EMP.getValue()}" />
 <c:set var="actRep" value="${ForwardConst.ACT_REP.getValue()}" />
 <c:set var="actAuth" value="${ForwardConst.ACT_AUTH.getValue()}" />
-<c:set var="actApp" value="${ForwardConst.ACT_APP.getValue()}" />
 
+<c:set var="commApp" value="${ForwardConst.CMD_UNAPPROVAL.getValue()}" />
 <c:set var="commIdx" value="${ForwardConst.CMD_INDEX.getValue()}" />
 <c:set var="commOut" value="${ForwardConst.CMD_LOGOUT.getValue()}" />
 
@@ -32,7 +32,7 @@
                             <a href="<c:url value='?action=${actEmp}&command=${commIdx}' />">従業員管理</a>&nbsp;
                         </c:when>
                         <c:when test="${sessionScope.login_employee.approvalFlag == AttributeConst.ROLE_MANAGER.getIntegerValue() || sessionScope.login_employee.approvalFlag == AttributeConst.ROLE_DIRECTOR.getIntegerValue()}">
-                            <a href="<c:url value='?action=${actApp}&command=${commIdx}' />">日報未承認管理</a>&nbsp;
+                            <a href="<c:url value='?action=${actRep}&command=${commApp}' />">日報未承認管理</a>&nbsp;
                         </c:when>
 
                     </c:choose>

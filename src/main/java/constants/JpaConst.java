@@ -88,6 +88,11 @@ public interface JpaConst {
     // 承認されていない日報を取得
     String Q_REP_GET_BY_APPROVAL_FLG = ENTITY_REP + "getByApprovalFlag";
     String Q_REP_GET_BY_APPROVAL_FLG_DEF = "SELECT r FROM Report AS r WHERE r.approvalsFlag = 0";
-    // 承認されている日報を取得
+    //全ての日報の件数を取得する
+    String Q_REP_UNAPPROVAL_COUNT = ENTITY_REP + ".unappCount";
+    String Q_REP_UNAPPROVAL_COUNT_DEF = "SELECT COUNT(r) FROM Report AS r WHERE r.approvalsFlag = 0";
+    // 全ての承認されていない日報を取得
+    String Q_REP_APP_GET_ALL = ENTITY_REP + ".getApproval";
+    String Q_REP_APP_GET_ALL_DEF = "SELECT r FROM Report AS r WHERE r.approvalsFlag = 0";
 
 }

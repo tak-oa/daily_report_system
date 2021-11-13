@@ -66,6 +66,37 @@ public class ReportAction extends ActionBase {
     }
 
     /**
+     * 未承認日報の一覧画面を表示する
+     * @throws ServletException
+     * @throws IOException
+     */
+    public void  unapproval() throws ServletException, IOException {
+
+        // 指定されたページ数の一覧画面に表示する日報データを取得
+        int page = getPage();
+        List<ReportView> unapp_reports = service.getUnappPerPage(page);
+
+        // 未承認の日報を取得
+        long reportsCount = service.countUnapproved();
+
+        putRequestScope(AttributeConst.REPORTS, unapp_reports);   // 取得した日報データ
+        putRequestScope(AttributeConst.REP_COUNT, reportsCount); //全ての日報データの件数
+        putRequestScope(AttributeConst.PAGE, page); //ページ数
+        putRequestScope(AttributeConst.MAX_ROW, JpaConst.ROW_PER_PAGE); //1ページに表示するレコードの数
+
+        // セッションにフラッシュメッセージが設定されている場合はリクエストスコープに移し、セッションから削除
+        String flush = getSessionScope(AttributeConst.FLUSH);
+        if (flush != null) {
+            putRequestScope(AttributeConst.FLUSH, flush);
+            removeSessionScope(AttributeConst.FLUSH);
+        }
+
+        // 一覧画面を表示
+        forward(ForwardConst.FW_REP_APP_INDEX);
+    }
+
+
+    /**
      * 新規登録画面を表示する
      * @throws ServletException
      * @throws IOException
@@ -240,5 +271,7 @@ public class ReportAction extends ActionBase {
             }
         }
     }
+
+
 
 }
