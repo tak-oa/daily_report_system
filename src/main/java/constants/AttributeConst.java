@@ -60,7 +60,7 @@ public enum AttributeConst {
     REP_DATE("report_date"),
     REP_TITLE("title"),
     REP_CONTENT("content"),
-    REP_APPROVAL("approval"),
+    REP_APPROVAL_FLG("approvals_flag"),
 
     // 顧客情報
     REP_COMPANY("company"),

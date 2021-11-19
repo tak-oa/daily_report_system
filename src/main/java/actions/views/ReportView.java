@@ -82,4 +82,5 @@ public class ReportView {
      * 上長（課長・部長）より承認されたかどうか
      */
     private Integer approvalsFlag;
+
 }

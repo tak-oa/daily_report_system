@@ -27,6 +27,8 @@ public enum ForwardConst {
     CMD_EDIT("edit"),
     CMD_UPDATE("update"),
     CMD_DESTROY("destroy"),
+    CMD_APPROVAL_INDEX("appIndex"),
+    CMD_APPROVAL("sucessApp"),
     CMD_UNAPPROVAL("unapproval"),
 
     //jsp
