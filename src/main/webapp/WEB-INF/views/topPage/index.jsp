@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page import="constants.ForwardConst" %>
+<%@ page import="constants.AttributeConst" %>
 
 <c:set var="actTop" value="${ForwardConst.ACT_TOP.getValue()}" />
 <c:set var="actEmp" value="${ForwardConst.ACT_EMP.getValue()}" />
@@ -28,6 +29,7 @@
                     <th class="report_title">タイトル</th>
                     <th class="report_company">取引先企業</th>
                     <th class="report_action">操作</th>
+                    <th class="report_appStatus">承認状況</th>
                 </tr>
                 <c:forEach var="report" items="${reports}" varStatus="status">
                     <fmt:parseDate value="${report.reportDate}" pattern="yyyy-MM-dd" var="reportDay" type="date" />
@@ -37,6 +39,15 @@
                         <td class="report_title">${report.title}</td>
                         <td class="report_company">${report.company}</td>
                         <td class="report_action"><a href="<c:url value='?action=${actRep}&command=${commShow}&id=${report.id}' />">詳細</a></td>
+                        <td class="report_appStatus">
+                            <c:choose>
+                                <c:when test="${report.approvalsFlag == 0}">
+                                    未承認
+                                </c:when>
+                                <c:when test="${report.approvalsFlag == 1}">
+                                    承認済
+                                </c:when>
+                            </c:choose>
                     </tr>
                 </c:forEach>
             </tbody>

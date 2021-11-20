@@ -69,13 +69,12 @@
         </c:if>
         <c:if test="${sessionScope.login_employee.approvalFlag == AttributeConst.ROLE_MANAGER.getIntegerValue()
                         || sessionScope.login_employee.approvalFlag == AttributeConst.ROLE_DIRECTOR.getIntegerValue()}">
-            <div style="display:inline-flex">
+        <div style="display:inline-flex">
         <form method="POST" action="<c:url value='?action=${actRep}&command=${commSucessApp}' />">
         <input type="hidden" name="${AttributeConst.REP_ID.getValue()}" value="${report.id}" />
         <button type="submit">承認</button>
         </form>
-            <button type="submit" onclick="location.href='./approvalIndex.jsp'" value="承認しない"></button>
-            </div>
+        </div>
         </c:if>
 
         <p>
